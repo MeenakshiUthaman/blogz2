@@ -31,7 +31,7 @@ def index():
         db.session.commit()
 
     task = Task.query.all()
-    return render_template('todos.html',title="Get It Done!", 
+    return render_template('todos.html',
         tasks=task)
 
 @app.route('/new')
