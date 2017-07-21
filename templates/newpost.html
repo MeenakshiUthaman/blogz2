@@ -1,22 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <a href="/">Main Blog Page</a>
-    <a href="/new">Add a Blog Entry</a>
-    <h1>Build a Blog</h1>
-    <form method='post' action="/">
+    <a href="/">all post</a>
+    <a href="/newpost">new post</a>
+    <a href="/login">login</a>
+    <h1>Blog users!</h1>
+    <form method='post' action="/blog">
         <table>
             <tr>
                 <td><label>
-                    Title for your new blog:
+                    title:
                     <input type="text" name='task'/>
                 </label></td>
+                <td><div class="error">{{title_error}}</div></td>
             </tr>
             <tr>
                 <td><label>
-                            Your new blog:
+                            post:
                             <textarea name ='new_blog'></textarea>
-                </td></label>
+                </label></td>
+                <td><div class="error">{{content_error}}</div></td>
             </tr> 
             </table>   
             <input type ="submit" value ='Add Entry'/>
